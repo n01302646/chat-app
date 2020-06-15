@@ -1,31 +1,18 @@
-
-
-// Listen for the 'submit' of a form
-// 	 event.preventDefault()  (prevent the form from leaving the page)
-//   Emit a message using "chatmsg"
-// Listen for "chatmsg"
-//   add a <li> with the chat msg to the <ol>
-
 const $msgForm = document.getElementById('sendMsg')
-const $msgList = document.getElementById('messages')
-const $userNameForm = document.getElementById('userdetails')
+const $msgList = document.getElementById('newMessages')
+const $userNameForm = document.getElementById('getUserDetails')
 
 const socket = io()
 
 let $username = 'Guest';
 let $sentmsgtime = 0;
-
-// Function to get user name
+//User Name block
 $userNameForm.addEventListener('submit',(event)=>{
 	event.preventDefault()
-
-	//enable msg box and chats only after entering username
-	$msgForm.style.display='block';
 	$msgList.style.display='flex';
+	$msgForm.style.display='block';
 	$userNameForm.style.display='none';
 	$username = event.currentTarget.username.value;
-
-	// Send a message to say that I've connected
 	socket.emit('newuser', {user: `${$username} is Online`})
 })
 
@@ -58,16 +45,16 @@ $msgForm.addEventListener('submit', (event) => {
 })
 
 
-// To receive msg
+// Receive message here
 socket.on('chatmsg', (data) => {
 	const newMsg = document.createElement('li')
 	$msgList.appendChild(newMsg)
 	newMsg.classList.add("messagereceive");
-	//newMsg.textContent = data.msg;
 	newMsg.innerHTML = data.msg + "<b class='senderDetails'> - by " + $username + " at "+ data.sentdatetime +"</b>";
 })
 
-//referenced code from https://tecadmin.net/get-current-date-time-javascript/#:~:text=Current%20Time%20in%20JavaScript,%3Ai%3As%E2%80%9D%20format.&text=var%20today%20%3D%20new%20Date()%3B,()%20%2B%20%22%3A%22%20%2B
+//Get date and time to add details to received message
+// Code written with the help of Stackoverflow.com
 function getDateTime(){
 	var today = new Date();
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
