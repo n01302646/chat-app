@@ -1,11 +1,31 @@
 body {
-	background-color: white;
+	background-image: url('/img/backimg.jpg');
+}
+li{
+	color: white;
+	font-size: large;
+	text-decoration: none;
+}
+ol{
+	list-style: none;
+}
+.wrapper{
+	margin-left: 34em;
+}
+.head-1{
+	color: white;
+}
+.form-1{
+	padding:1em;
+	margin-left: 0em;
 }
 
 #sendMsg, #messages{
 	display: none;
 }
-
+#sendMsg{
+	margin-left: 2em;
+}
 #sendMsg{
 	margin-top: 1em;
 }
@@ -18,7 +38,7 @@ body {
 #messages{
 	width: 20em;
 	padding: 1em;
-	border: 1px solid black;
+	border: 1px solid white;
 	flex-direction: column;
 	justify-content: center;
 	/* height: 50em;
@@ -26,10 +46,11 @@ body {
 }
 
 .userjoined{
-	border: 1px solid black;
+	border: 1px solid white;
     display: inline;
 	padding: 0.3em;	
 	text-align: center;
+	margin:auto;	
 }
 
 .messagesent, .messagereceive{
@@ -37,19 +58,20 @@ body {
 	padding: 0.5em;
 	margin-bottom: 1em;
 	color: white;
+	font-size: large;
 }
 
 .messagesent{
-	background-color: #313e83;    
+	background-color: #25D366;    
     align-self: flex-end;   
 }
 
 .messagereceive{
-	background-color: grey;
+	background-color:black;
 	align-self: flex-start;
 }
 
 .senderDetails{
-	color: #f4f4f4;
-	font-size: 10px;
+	color: black;
+	font-size: 13px;
 }
