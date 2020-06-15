@@ -9,23 +9,25 @@
 		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
-		<h1>Chat App world</h1>
+	<div class="wrapper">
+		<h1 class='head-1'>Chat App world</h1>
 
 		<!-- Form: Input field, send button, 
 				 Messages: ordered list -->
-		<form id="userdetails">
-			<input type="text" name="username" id="username" placeholder="Please enter your name.">
-			<button type="submit" id="enterButton">Enter</button>
+		<form id="userdetails" class='form-1'>
+			<input type="text" name="username" class='form-1' id="username" placeholder="Enter you Name">
+			<button type="submit" class='form-1' id="enterButton">Enter</button>
 		</form>
 		
 
 		<ol id="messages"></ol>
 		<form id="sendMsg">
-			<input type="text" id="txt">
-			<button type="submit">Send</button>
+			<input type="text" id="txt" class='form-1'>
+			<button class='form-1' type="submit">Send</button>
 		</form>
 		
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="js/index.js"></script>
+	</div>
 	</body>
 </html>

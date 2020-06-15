@@ -26,7 +26,7 @@ $userNameForm.addEventListener('submit',(event)=>{
 	$username = event.currentTarget.username.value;
 
 	// Send a message to say that I've connected
-	socket.emit('newuser', {user: `${$username} joined the chat`})
+	socket.emit('newuser', {user: `${$username} is Online`})
 })
 
 // Event listener, waiting for an incoming "newuser"

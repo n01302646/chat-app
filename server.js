@@ -30,7 +30,6 @@ io.on('connection', function (socket) {
 	//   io.emit to all user
 	socket.on('chatmsg', (data) => {
     socket.broadcast.emit('chatmsg', data)
-  //  io.emit('chatmsg', data)
 	})
 
 
