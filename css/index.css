@@ -20,7 +20,7 @@ ol{
 	margin-left: 0em;
 }
 
-#sendMsg, #messages{
+#sendMsg, #newMessages{
 	display: none;
 }
 #sendMsg{
@@ -30,12 +30,12 @@ ol{
 	margin-top: 1em;
 }
 
-#userdetails
+#getUserDetails
 {
 	display: block;
 }
 
-#messages{
+#newMessages{
 	width: 20em;
 	padding: 1em;
 	border: 1px solid white;
@@ -67,11 +67,11 @@ ol{
 }
 
 .messagereceive{
-	background-color:black;
+	background-color: grey;
 	align-self: flex-start;
 }
 
 .senderDetails{
-	color: black;
-	font-size: 13px;
+	color: #ECE5DD;
+	font-size: 14px;
 }
